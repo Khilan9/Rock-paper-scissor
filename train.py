@@ -11,9 +11,6 @@ import pandas as pd
 
 imgwithlabel=[]
 
-#--------------------------------------------------#
-#Exceute below code 2 times(by changing path from rock to paper and uncomment #imgwithlabel.append([img,1]) comment other 2
-                            #(by changing path from paper to scissor and uncomment #imgwithlabel.append([img,2]) comment other 2
 
 #change below path according to your rock directory location
 #ppath='E:/dataset/rock'
@@ -34,13 +31,53 @@ for item in os.listdir(ppath):
     #print(str(height)+" "+str(width)+" "+str(channels))
 
     imgwithlabel.append([img,0])
-    #imgwithlabel.append([img,1])
-    #imgwithlabel.append([img,2])
 
 cv2.destroyAllWindows()
 
-#Exceute till above 2 times
-#--------------------------------------------------#
+
+#change below path according to your paper directory location
+#ppath='E:/dataset/paper'
+
+for item in os.listdir(ppath):
+    img=cv2.imread(os.path.join(ppath,item))
+
+    #Before further processing verify image displaying or not
+    #cv2.imshow("frame",img)
+    #k=cv2.waitKey(20)
+    #if k==27:
+    #    break
+    #dimensions = img.shape
+    # height, width, number of channels in image
+    #height = img.shape[0]
+    #width = img.shape[1]
+    #channels = img.shape[2]
+    #print(str(height)+" "+str(width)+" "+str(channels))
+
+    imgwithlabel.append([img,1])
+
+cv2.destroyAllWindows()
+
+#change below path according to your scissor directory location
+#ppath='E:/dataset/scissor'
+
+for item in os.listdir(ppath):
+    img=cv2.imread(os.path.join(ppath,item))
+
+    #Before further processing verify image displaying or not
+    #cv2.imshow("frame",img)
+    #k=cv2.waitKey(20)
+    #if k==27:
+    #    break
+    #dimensions = img.shape
+    # height, width, number of channels in image
+    #height = img.shape[0]
+    #width = img.shape[1]
+    #channels = img.shape[2]
+    #print(str(height)+" "+str(width)+" "+str(channels))
+
+    imgwithlabel.append([img,2])
+
+cv2.destroyAllWindows()
 
 
 
