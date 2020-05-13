@@ -10,13 +10,10 @@ Step 1 : create directory initialze with any name(ex: dataset)
      
      
      
-Step 2 : Now execute train.py till imglabel[]
-       -- give path of your rock directory and append to imglabel
-       -- similarly append data of paper and scissor
-       -- after appending data execute from zip to the end of file
+Step 2 : Now execute train.py according to setting path of rock,paper and scissor
        -- Now your model is saved into the rpc.tf file
     
 Step 3 : Now give path of rps.tf inside path variable of rpsmain.py
        -- and enjoy playing game.
        
- ---------------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------------#
