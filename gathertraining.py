@@ -7,7 +7,7 @@
 import os
 import cv2
 import sys 
-
+import shutil
 def main(argv):
     # Create Directory if not exist
     pathname = os.getcwd() + "\\" +  argv[1]
@@ -15,7 +15,7 @@ def main(argv):
     if not isExist:
         os.makedirs(pathname)
     else:
-        os.rmdir(pathname)
+        shutil.rmtree(pathname, ignore_errors=True)
         os.makedirs(pathname)
     print(pathname)
     camera=cv2.VideoCapture(0)
