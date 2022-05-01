@@ -12,7 +12,8 @@ import pandas as pd
 from keras.models import load_model
 
 #location of file rps.tf
-#ex : classify=load_model("E:/rps.tf")
+rpsmodelpath = os.getcwd() + "\\rps.tf"
+classify=load_model(rpsmodelpath)
 
 def findwinner(p1,p2):
     if p1==p2:

@@ -13,7 +13,8 @@ imgwithlabel=[]
 
 
 #change below path according to your rock directory location
-#ppath='E:/dataset/rock'
+
+ppath=os.getcwd()+"\\rock"
 
 for item in os.listdir(ppath):
     img=cv2.imread(os.path.join(ppath,item))
@@ -36,7 +37,7 @@ cv2.destroyAllWindows()
 
 
 #change below path according to your paper directory location
-#ppath='E:/dataset/paper'
+ppath=os.getcwd()+"\\paper"
 
 for item in os.listdir(ppath):
     img=cv2.imread(os.path.join(ppath,item))
@@ -58,7 +59,7 @@ for item in os.listdir(ppath):
 cv2.destroyAllWindows()
 
 #change below path according to your scissor directory location
-#ppath='E:/dataset/scissor'
+ppath=os.getcwd()+"\\scissor"
 
 for item in os.listdir(ppath):
     img=cv2.imread(os.path.join(ppath,item))
@@ -116,7 +117,8 @@ classify.add(Dense(output_dim=3,activation='softmax'))
 
 
 classify.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
-classify.fit(np.array(imgdata),np.array(copyimglabel),epochs=30)
+classify.fit(np.array(imgdata),np.array(copyimglabel),epochs=2)
 
 #Save the model
-classify.save("rps.tf")
+savepath = os.getcwd() + "\\rps.tf"
+classify.save(savepath)
