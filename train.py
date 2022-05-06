@@ -117,7 +117,7 @@ classify.add(Dense(output_dim=3,activation='softmax'))
 
 
 classify.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
-classify.fit(np.array(imgdata),np.array(copyimglabel),epochs=2)
+classify.fit(np.array(imgdata),np.array(copyimglabel),epochs=15)
 
 #Save the model
 savepath = os.getcwd() + "\\rps.tf"
